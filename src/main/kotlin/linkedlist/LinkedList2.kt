@@ -1,5 +1,6 @@
 package linkedlist
 
+
 class LinkedList2 {
     var head: Node? = null
     fun printMiddle() {
@@ -17,9 +18,9 @@ class LinkedList2 {
         if (head == null) {
             head = Node(new_data)
         } else {
-            val new_node = Node(new_data)
-            new_node.next = head
-            head = new_node
+            val newNode = Node(new_data)
+            newNode.next = head
+            head = newNode
         }
     }
 
@@ -209,12 +210,27 @@ class LinkedList2 {
             last = last.next
         }
 
-        /* Set the next of second last as null */secLast!!.next = null
+        /* Set the next of second last as null */
+        secLast!!.next = null
 
-        /* Set the next of last as head */last.next = head
+        /* Set the next of last as head */
+        last.next = head
 
-        /* Change head to point to last node. */head = last
+        /* Change head to point to last node. */
+        head = last
     }
+
+    fun detectLoop(): Boolean {
+        var h = head
+        val s = HashSet<Node>()
+        while (h != null) {
+            if (s.contains(h)) return true
+            s.add(h)
+            h = h.next
+        }
+        return false
+    }
+
 
     fun printList() {
         var tnode = head
@@ -247,11 +263,10 @@ class LinkedList2 {
 
 fun main(){
     val llist1 = LinkedList2()
-    llist1.insertAtEnd(2)
-    llist1.insertAtEnd(3)
-    llist1.insertAtEnd(5)
-    llist1.insertAtEnd(4)
-    llist1.insertAtEnd(1)
+    llist1.insertAtHead(10)
+    llist1.insertAtHead(15)
+    llist1.insertAtHead(4)
+    llist1.insertAtHead(20)
     val llist2 = LinkedList2()
     llist2.insertAtEnd(3)
     llist2.insertAtEnd(3)
@@ -261,4 +276,6 @@ fun main(){
     println("------")
     llist1.moveToFront()
     llist1.printList()
+
+    println(llist1.detectLoop())
 }
