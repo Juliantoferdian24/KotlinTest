@@ -1,3 +1,5 @@
+import java.util.*
+
 fun maxFreqArray(arr: IntArray): Int {
     val map: MutableMap<Int, Int> = HashMap()
     for (key in arr) {

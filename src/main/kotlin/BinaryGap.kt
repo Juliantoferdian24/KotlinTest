@@ -1,7 +1,8 @@
 import kotlin.math.max
 
+//Tokopedia
 fun main() {
-    print(binaryGap(32))
+    print(binaryGap(35))
 }
 
 fun binaryGap(n: Int): Int {

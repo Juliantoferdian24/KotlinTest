@@ -6,7 +6,7 @@ fun main() {
 fun jumpingOnClouds(c: Array<Int>): Int {
     var count = 0
     var i = 0
-    while (i < c.size - 1) {                                                                     //use a while loop instead.
+    while (i < c.size - 1) {
         if (c[i] == 0) i++
         count++
         i++
